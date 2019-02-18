@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  code:
+    image: php:7.3-fpm
+    restart: always
+    volumes:
+     - "./:/app"
+     - "./docker/php.ini:/etc/php/conf.d/00-app.ini"
+
+  web:
+    image: nginx:1
+    depends_on:
+     - code
+    restart: always
+    ports:
+     - "80:80"
+     - "443:443"
+    volumes:
+     - "./:/app"
+     - "./docker/nginx.conf:/etc/nginx/conf.d/00-app.conf"
