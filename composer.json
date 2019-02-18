@@ -1,0 +1,7 @@
+{
+	"require-dev": {
+		"behat/behat": "3.*",
+		"behat/mink": "1.*",
+		"dmore/behat-chrome-extension": "dev-master@dev"
+	}
+}

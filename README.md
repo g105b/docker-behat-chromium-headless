@@ -29,4 +29,8 @@ Run `docker-compose down` to stop the Docker composition.
 Running the tests
 -----------------
 
-// TODO.
+Docker compositions can be split across multiple files. Before the tests can be run, the dependencies for Behat must be pulled in via Composer. Compose**r**.
+
+Install dependencies with the command `docker-compose -f docker-compose.build.yml up`. You should see the Composer output scroll past until the script completes with a successful `0` exit code.
+
+Once the dependencies are installed, the tests can be run with the command `docker-compose -f docker-compose.test.yml up`.
